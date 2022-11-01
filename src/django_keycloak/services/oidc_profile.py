@@ -212,13 +212,13 @@ def _update_or_create(client, token_response, initiate_time):
     issuer = django_keycloak.services.realm.get_issuer(client.realm)
 
     import json
-    logger.info(json.dumps(token_response))
+    logger.debug(json.dumps(token_response))
     token_response_key = 'id_token' if 'id_token' in token_response \
         else 'access_token'
 
-    logger.info("GOT TOKEN: %s", token_response[token_response_key])
-    logger.info("GOT id_token: %s", token_response['id_token'])
-    logger.info("GOT access_token: %s", token_response['access_token'])
+    logger.debug("GOT TOKEN: %s", token_response[token_response_key])
+    logger.debug("GOT id_token: %s", token_response['id_token'])
+    logger.debug("GOT access_token: %s", token_response['access_token'])
     token_object = client.openid_api_client.decode_token(
         token=token_response[token_response_key],
         key=client.realm.certs,
