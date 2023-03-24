@@ -10,9 +10,9 @@ except ImportError:
 from django_keycloak.python_keycloak_client.mixins import WellKnownMixin
 from django_keycloak.python_keycloak_client.exceptions import KeycloakClientError
 
-PATH_ENTITLEMENT = "auth/realms/{}/authz/entitlement/{}"
+PATH_ENTITLEMENT = "realms/{}/authz/entitlement/{}"
 
-PATH_WELL_KNOWN = "auth/realms/{}/.well-known/uma2-configuration"
+PATH_WELL_KNOWN = "realms/{}/.well-known/uma2-configuration"
 
 
 class KeycloakAuthz(WellKnownMixin, object):

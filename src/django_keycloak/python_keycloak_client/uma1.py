@@ -7,7 +7,7 @@ except ImportError:
 
 from django_keycloak.python_keycloak_client.mixins import WellKnownMixin
 
-PATH_WELL_KNOWN = "auth/realms/{}/.well-known/uma-configuration"
+PATH_WELL_KNOWN = "realms/{}/.well-known/uma-configuration"
 
 
 class KeycloakUMA1(WellKnownMixin, object):
