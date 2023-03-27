@@ -50,14 +50,14 @@ class Login(RedirectView):
                 state=str(nonce.state)
             )
 
-        if self.request.realm.server.internal_url:
-            authorization_url = authorization_url.replace(
-                self.request.realm.server.internal_url,
-                self.request.realm.server.url,
-                1
-            )
+        #if self.request.realm.server.internal_url:
+        #    authorization_url = authorization_url.replace(
+        #        self.request.realm.server.internal_url,
+        #        self.request.realm.server.url,
+        #        1
+        #    )
 
-        logger.debug(authorization_url)
+        logger.info(authorization_url)
 
         return authorization_url
 
